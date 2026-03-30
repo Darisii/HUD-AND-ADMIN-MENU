@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminHUD System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==">
+</head>
+<body>
+    <!-- HUD -->
+    <div id="hud" class="hud">
+        <div class="hud-item">
+            <i class="fas fa-wallet"></i>
+            <span id="money">$0</span>
+        </div>
+        <div class="hud-item">
+            <i class="fas fa-heart"></i>
+            <div class="progress-bar">
+                <div id="health-bar" class="progress-fill health"></div>
+            </div>
+        </div>
+        <div class="hud-item">
+            <i class="fas fa-shield-alt"></i>
+            <div class="progress-bar">
+                <div id="armor-bar" class="progress-fill armor"></div>
+            </div>
+        </div>
+        <div class="hud-item">
+            <i class="fas fa-drumstick-bite"></i>
+            <div class="progress-bar">
+                <div id="hunger-bar" class="progress-fill hunger"></div>
+            </div>
+        </div>
+        <div class="hud-item">
+            <i class="fas fa-tint"></i>
+            <div class="progress-bar">
+                <div id="thirst-bar" class="progress-fill thirst"></div>
+            </div>
+        </div>
+        <div class="hud-item">
+            <i class="fas fa-brain"></i>
+            <div class="progress-bar">
+                <div id="stress-bar" class="progress-fill stress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Menu -->
+    <div id="admin-menu" class="admin-menu hidden">
+        <div class="admin-header">
+            <h2>🔧 ADMIN MENU</h2>
+            <button class="close-btn" onclick="closeAdminMenu()">×</button>
+        </div>
+        
+        <div class="admin-content">
+            <!-- Player Management -->
+            <div class="admin-section">
+                <h3>👥 Player Management</h3>
+                
+                <div class="player-list" id="player-list">
+                    <!-- Players will be loaded here -->
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="admin-btn info" onclick="teleportToPlayer()">📍 Teleport</button>
+                    <button class="admin-btn info" onclick="bringPlayer()">📥 Bring</button>
+                    <button class="admin-btn success" onclick="healPlayer()">💚 Heal</button>
+                    <button class="admin-btn success" onclick="giveArmor()">🛡️ Armor</button>
+                    <button class="admin-btn success" onclick="giveMoney()">💰 Money</button>
+                    <button class="admin-btn warning" onclick="kickPlayer()">👢 Kick</button>
+                    <button class="admin-btn danger" onclick="banPlayer()">🔨 Ban</button>
+                    <button class="admin-btn success" onclick="revivePlayer()">⚕ Revive</button>
+                    <button class="admin-btn info" onclick="spectatePlayer()">👁️ Spectate</button>
+                </div>
+            </div>
+            
+            <!-- Vehicle Management -->
+            <div class="admin-section">
+                <h3>🚗 Vehicle Management</h3>
+                
+                <div class="input-group">
+                    <input type="text" id="vehicle-model" placeholder="Vehicle model">
+                    <button class="admin-btn success" onclick="spawnVehicle()">🚗 Spawn</button>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="admin-btn danger" onclick="deleteVehicle()">🗑️ Delete</button>
+                </div>
+            </div>
+            
+            <!-- Admin Tools -->
+            <div class="admin-section">
+                <h3>🔧 Admin Tools</h3>
+                
+                <div class="action-buttons">
+                    <button class="admin-btn info" onclick="toggleNoclip()">👻 Noclip</button>
+                    <button class="admin-btn info" onclick="toggleGodMode()">🛡️ God Mode</button>
+                    <button class="admin-btn info" onclick="toggleInvisible()">👤 Invisible</button>
+                    <button class="admin-btn warning" onclick="clearArea()">🧹 Clear Area</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
